@@ -1,0 +1,15 @@
+version: '3.9'
+
+services:
+  mongodb:
+    container_name: mongodb
+    image: mongo:5.0
+    ports:
+      - 27017:27017
+    volumes:
+      - test-volume:/data/db
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=super
+      - MONGO_INITDB_ROOT_PASSWORD=Mario
+volumes:
+  test-volume:
